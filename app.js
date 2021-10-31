@@ -28,17 +28,30 @@ const kiwi = new Fruit({
     review:"King of Fruits"
 })
 
-Fruit.insertMany([banana,kiwi],function(err){
-    if(err){
-        console.log(err)
-    }
-    else{
-        console.log("Inserted all the fruits to the fruitsDB")
-    }
-})
+// Fruit.insertMany([banana,kiwi],function(err){
+//     if(err){
+//         console.log(err)
+//     }
+//     else{
+//         console.log("Inserted all the fruits to the fruitsDB")
+//     }
+    
+// })
 
 
 // fruit.save();
+
+Fruit.find(function(err,fruits){
+    // if(err){
+    //     console.log(err);
+    // }
+    // else{
+    //     console.log(fruits);
+    // }
+    fruits.forEach(function(fruit){
+        console.log(fruit.name)
+    })
+})
 
 
 
@@ -54,6 +67,6 @@ const person = new Person({
     age:19
 })
 
-person.save();
+// person.save();
 
 //mongoose.connection.close();
